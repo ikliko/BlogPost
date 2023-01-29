@@ -1,27 +1,40 @@
 # Blog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Тази задача има за цел да определи нивото на вашите познания, както и вашите умения, при разработката на front-end приложения с Angular. За целта сме ви подготвили малък проект, с неголяма сложност, който трябва да завършите за определен период от време, определен от вашия интервюиращ. Ако успеете да се справите със задачата в рамките на определеното за вас време, това означава, че сте се справили добре, разбира се ако покривате и нужните изисквания, описани по-долу. Даваме ви свободата да развиете проекта по ваше усмотрение. Това би повлияло положително на оценката ви.
 
-## Development server
+## Задания
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Вашата задача е да създадете потребителски интерфейс, за приложение наречено Blog post. Приложението ще съдържа всички CRUD операции. Трябва да има възможност за създаване, редактиране, изтриване и визуализиране на статии. За back-end частта ще използвате фалшив API - [JSON Placeholder](https://jsonplaceholder.typicode.com/guide/), а за предефинирани UI компоненти -[PrimeNG](https://www.primefaces.org/primeng/setup). Също така, за да стилизирате custom компонентите, ще е нужно да използвате [PrimeFlex](https://www.primefaces.org/primeflex/).
 
-## Code scaffolding
+За вас е генериран празен проект, като са добавени и всички нужни библиотеки. Също така, към проекта са добавени [NGRX Store](https://ngrx.io/guide/store) и [NGRX Component store](https://ngrx.io/guide/component-store), които не са задължителни за използване, но ако ги използвате също биха повлияли положително на оценката ви.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Функционалности
 
-## Build
+### Визлуализиране на статии
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+При първоначално зареждане на проекта статиите трябва да се визуализират в таблица.
 
-## Running unit tests
+![]("./../images/20230129180706.png?raw=true)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Създаване на статия
 
-## Running end-to-end tests
+При натискане на бутона `[Create Post]` трябва да се покаже диалог, с форма за добавяне на статия. Формата трябва да има валидации за празни полета.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![]("./../images/20230129180947.png?raw=true)
 
-## Further help
+След натискане на бутона `[Create]`, задължителните полета се оцветяват в червено, ако не са попълнени, а бутонът става в състояние `disabled`:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![]("./../images/20230129181122.png?raw=true)
+
+### Редактиране на статия
+
+При натискане на бутона за редактиране, трябва да се покаже диалог, с форма за редактиране на статия. Формата трябва да е попълнена с данните от съответната статия. Валидациите са същите като при създаването на статия.
+
+![]("./../images/20230129181311.png?raw=true)
+![]("./../images/20230129181432.png?raw=true)
+
+### Изтриване на статия
+
+При натискане на бутона за изтриване, трябва да се покаже диалог, със съобщение за потвърждение. След натискане на бутона `[Yes]`, трябва да се изтрие съответната статия, а при натискане на `[No]` се затваря диалогът.
+
+![]("./../images/20230129181657.png?raw=true)
