@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+import {ArticleEditComponent} from "./features/articles/components/article-edit/article-edit.component";
 // import {DisableView} from '@gg/gg-base/common/disable-view.interface';
 // import {HomeModalRefreshGuard} from '@gg/gg-base/common/home-modal-refresh.guard';
 

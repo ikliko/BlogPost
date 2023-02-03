@@ -6,16 +6,16 @@ import {SelectivePreloadingStrategy} from "../libs/router/selective-preloading.s
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      anchorScrolling: 'enabled',
-      urlUpdateStrategy: 'eager',
-      preloadingStrategy: SelectivePreloadingStrategy,
-      enableTracing: false,
-      initialNavigation: "enabledNonBlocking",
+      // anchorScrolling: 'enabled',
+      // urlUpdateStrategy: 'eager',
+      // preloadingStrategy: SelectivePreloadingStrategy,
+      // enableTracing: false,
+      // initialNavigation: "enabledNonBlocking",
     })
   ],
   exports: [RouterModule],
   providers: [
-    {provide: PreloadingStrategy, useClass: SelectivePreloadingStrategy},
+    // {provide: PreloadingStrategy, useClass: SelectivePreloadingStrategy},
     // { provide: AuthGuard, useClass: AuthGuard },
     // { provide: ResetGuard, useClass: ResetGuard },
     // { provide: OldUrlToModalGuard, useClass: OldUrlToModalGuard },

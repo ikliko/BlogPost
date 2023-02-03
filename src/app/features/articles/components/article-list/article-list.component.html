@@ -1,1 +1,36 @@
-<p>article-list works!</p>
+<div>
+  <div class="flex justify-content-between align-items-center">
+    <h1>Posts</h1>
+
+    <a [routerLink]="[{ outlets: { modal: 'articles/create' } }]" pButton >Create Post</a>
+  </div>
+
+  <p-table [value]="articles" [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Id</th>
+        <th>UserID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-article>
+      <tr>
+        <td>{{article.id}}</td>
+        <td>{{article.userId}}</td>
+        <td>{{article.title}}</td>
+        <td>{{article.body}}</td>
+        <td>
+          <div class="flex justify-content-between">
+            <a [routerLink]="[{ outlets: { modal: '/articles/edit/'+ article.id } }]">
+              <ion-icon name="pencil" class="text-yellow-400"></ion-icon>
+            </a>
+
+            <ion-icon name="close" class="text-red-400"></ion-icon>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import {Article} from "@store/articles/article";
 
 @Injectable({
   providedIn: "root"
@@ -10,6 +11,6 @@ export class ArticleService {
   }
 
   getAll() {
-    return this.httpClient.get(`${environment.API_ENDPOINT}/posts`);
+    return this.httpClient.get<Article[]>(`${environment.API_ENDPOINT}/posts`);
   }
 }

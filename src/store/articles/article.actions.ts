@@ -1,12 +1,30 @@
-import {Action} from "@ngrx/store";
+import {createAction, props} from "@ngrx/store";
 import {Article} from "@store/articles/article";
 
-export const GET_ALL_ARTICLES = '[ARTICLES] Get All';
+export const addArticle = createAction(
+  '[ARTICLES] Add article',
+  props<{ payload: {
+      title: string;
+      body: string;
+      userId: number;
+    } }>()
+)
 
-export class GetAllArticles implements Action {
-  readonly type = GET_ALL_ARTICLES;
+export const removeArticle = createAction(
+  '[ARTICLES] Remove article',
+  props<{ id: number }>()
+)
 
-  constructor(public payload: Article[]) {}
-}
+export const loadArticles = createAction(
+  '[ARTICLES] Load all article',
+)
 
-export type ArticleActions = GetAllArticles;
+export const loadArticlesSuccess = createAction(
+  '[ARTICLES] Load all articles success',
+  props<{ articles: Article[] }>()
+)
+
+export const loadArticlesFailure = createAction(
+  '[ARTICLES] Load all articles failure',
+  props<{ error: string }>()
+)

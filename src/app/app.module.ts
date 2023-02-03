@@ -6,9 +6,11 @@ import {StoreModule} from '@ngrx/store';
 import {AppRoutingModule} from "./app-routing.module";
 import {HeaderModule} from "./common/header/header.module";
 import {PageTitleModule} from "@libs/page-title/page-title.module";
-import rootReducer from "@store/root.reducer";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {ApiPrefixInterceptor} from "@libs/http/api-prefix.interceptor";
+import {HttpClientModule} from "@angular/common/http";
+import {EffectsModule} from '@ngrx/effects';
+import {articleReducer} from "@store/articles/article.reducer";
+import {ArticleEffects} from "@store/articles/article.effects";
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,9 +18,13 @@ import {ApiPrefixInterceptor} from "@libs/http/api-prefix.interceptor";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot(rootReducer, {}),
+    StoreModule.forRoot({
+      articles: articleReducer
+    }),
+    EffectsModule.forRoot([ArticleEffects]),
     PageTitleModule,
     HeaderModule,
+    IonicModule.forRoot(),
   ],
   providers: [
     // {

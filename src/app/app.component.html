@@ -1,3 +1,10 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<router-outlet name="modal"></router-outlet>
+<div class="surface-ground min-h-screen overflow-auto">
+  <app-header></app-header>
+
+  <router-outlet name="modal"></router-outlet>
+
+  <div class="w-10 mx-auto my-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
